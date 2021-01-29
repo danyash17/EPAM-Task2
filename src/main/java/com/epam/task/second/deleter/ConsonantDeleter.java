@@ -8,7 +8,7 @@ import java.util.regex.Pattern;
 public class ConsonantDeleter implements StringDeleter {
     private static final Logger LOGGER = Logger.getLogger(ConsonantDeleter.class);
     public String delete(String content) {
-        Pattern pattern = Pattern.compile("\\s\\b[^aeiou]\\w{4}\\b");
+        Pattern pattern = Pattern.compile("\\b[b-df-hj-np-tv-xz]\\w{4}\\b\\s");
         Matcher remover = pattern.matcher(content);
         LOGGER.info("Do remove");
         return remove(remover,content);
